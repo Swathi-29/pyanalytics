@@ -10,6 +10,7 @@ import matplotlib.pyplot as plt
 
 #run these lines till plt.show together
 labels = range(1, 11)
+labels
 plt.figure(figsize=(10, 7))
 plt.subplots_adjust(bottom=0.1)
 plt.scatter(X[:,0],X[:,1], label='True Position')
@@ -22,7 +23,7 @@ plt.show()
 
 from scipy.cluster.hierarchy import dendrogram, linkage
 from matplotlib import pyplot as plt
-
+from matplotlib.pyplot as plt
 linked = linkage(X, 'single')
 linked
 labelList = range(1, 11)
@@ -30,7 +31,7 @@ labelList = range(1, 11)
 plt.figure(figsize=(10, 7))
 dendrogram(linked,  orientation='top',  labels=labelList,  distance_sort='descending', show_leaf_counts=True)
 plt.show();
-
+X
 
 #The algorithm starts by finding the two points that are closest to each other on the basis of Euclidean distance. If we look back at Graph1, we can see that points 2 and 3 are closest to each other while points 7 and 8 are closes to each other. Therefore a cluster will be formed between these two points first. In Graph2, you can see that the dendograms have been created joining points 2 with 3, and 8 with 7. The vertical height of the dendogram shows the Euclidean distances between points. From Graph2, it can be seen that Euclidean distance between points 8 and 7 is greater than the distance between point 2 and 3.
 
@@ -56,7 +57,7 @@ cluster = AgglomerativeClustering(n_clusters=2, affinity='euclidean', linkage='w
 #n the code above we import the AgglomerativeClustering class from the "sklearn.cluster" library. The number of parameters is set to 2 using the n_clusters parameter while the affinity is set to "euclidean" (distance between the datapoints). Finally linkage parameter is set to "ward", which minimizes the variant between the clusters.
 
 cluster.fit_predict(X)
-
+X
 #Next we call the fit_predict method from the AgglomerativeClustering class variable cluster. This method returns the names of the clusters that each data point belongs to. Execute the following script to see how the data points have been clustered.
 
 print(cluster.labels_)
@@ -74,6 +75,16 @@ plt.scatter(X[:,0],X[:,1], c=cluster.labels_, cmap='rainbow')
 
 #The problem that we are going to solve in this section is to segment customers into different groups based on their shopping trends.
 #The dataset for this problem can be downloaded from the following link:
+url='https://stackabuse.s3.amazonaws.com/files/hierarchical-clustering-with-python-and-scikit-learn-shopping-data.csv'
+import matplotlib.pyplot as plt
+import pandas as pd
+#%matplotlib inline
+import numpy as np
+df = pd.read_csv(url)
+#customer_data = pd.read_csv('data/shopping-data.csv')
+customer_data = df.copy()
+customer_data.head()
+
 url='https://stackabuse.s3.amazonaws.com/files/hierarchical-clustering-with-python-and-scikit-learn-shopping-data.csv'
 
 
