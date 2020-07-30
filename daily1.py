@@ -2,7 +2,7 @@
 #-----------------------------
 #Data Structures
 #List - ordered collection of items, mutable : [square ]
-list1 = [1,2,3,4,5,'a','Dhiraj',"Upadhyaya",True]  #list type of object with data
+list1 = [1,2,3,4,5,'a','Swathi',"Krishna",True]  #list type of object with data
 list1  #print when through spyder
 type(list1)  #type of object
 print(list1)  #print when running complete file
@@ -18,6 +18,7 @@ sorted(list2)
 #%%
 #tuple - multiple type of objects like list, immutable: ( round brackets) : no changes
 tuple1 = (1, 2, 'a', 'b')
+#%% to draw horizontal line
 tuple1
 type(tuple1)
 
@@ -26,7 +27,8 @@ type(tuple1)
 dict1 = {1:'Ramesh', 2:'Suresh', 3:'Priyanka'}
 dict1
 type(dict1)
-
+phone = { 'brand': 'OnePlus', 'year': 2020, 'color': "green"}
+phone['brand']
 car = { 'brand':'Honda', 'model': 'Jazz', 'year' : 2017}
 type(car)
 car
@@ -34,6 +36,7 @@ car
 car['brand']
 car['year']
 car.get('year')
+
 dir(car)
 
 
@@ -73,6 +76,8 @@ for i in list1:
 for i in list1:    print(i)
 for i in list1:    print('Dhiraj ', i + 6)
 
+list2= [0]
+for i in list2:    print('Dhiraj ', i + 6)
 tuple1
 list5 = ['a',1]
 list5
@@ -117,7 +122,11 @@ import numpy
 numpy.array([10,20])
 
 import numpy as np #np is alias
+dir(np)
 np1 = np.arange(1,10)
+np1
+np2 = np.arange(50,100)
+np2
 x=np.arange(start=1,stop=1000000,step=2)
 len(x)
 x[1:100]
@@ -190,7 +199,7 @@ data = mtcars.data
 data.head(6)
 type(data)
 data.to_csv('mtcars.csv')
-data.to_excel('mtcarsExcel.xlsx','sheet3', header=False)
+data.to_excel('mtcarsExcel.xlsx','sheet3', header= True)
 
 #writing to multiple sheets
 writer = pd.ExcelWriter('test.xlsx', engine='xlsxwriter')
